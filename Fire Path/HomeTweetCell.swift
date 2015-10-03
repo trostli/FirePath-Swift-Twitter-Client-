@@ -14,7 +14,7 @@ class HomeTweetCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: DXTimestampLabel!
     
     var tweet: Tweet! {
         didSet {
@@ -22,7 +22,7 @@ class HomeTweetCell: UITableViewCell {
             screenNameLabel.text = "@" + (tweet.user?.screenname)!
             tweetLabel.text = tweet.text
             profileImageView.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrl)!))
-            timeLabel.text = tweet.createdAtString
+            timeLabel.timestamp = tweet.createdAt
         }
     }
     

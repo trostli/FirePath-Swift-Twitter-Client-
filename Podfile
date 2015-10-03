@@ -4,5 +4,6 @@
 target 'Fire Path' do
   pod "AFNetworking"
   pod "BDBOAuth1Manager"
+  pod "DXTimestamper"
 end
 
