@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA8208C2E1C0618A48C2D566"
+               BlueprintIdentifier = "C41FC2A9FDE3C0B3C1EC2782"
                BuildableName = "libPods-Fire Path.a"
                BlueprintName = "Pods-Fire Path"
                ReferencedContainer = "container:Pods.xcodeproj">

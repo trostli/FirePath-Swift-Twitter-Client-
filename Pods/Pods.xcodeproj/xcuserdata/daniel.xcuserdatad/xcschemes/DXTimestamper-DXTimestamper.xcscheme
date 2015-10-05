@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A5C58BC12D34415582DA8C9"
+               BlueprintIdentifier = "1676D4973B8D27D92A239C6F"
                BuildableName = "DXTimestamper.bundle"
                BlueprintName = "DXTimestamper-DXTimestamper"
                ReferencedContainer = "container:Pods.xcodeproj">

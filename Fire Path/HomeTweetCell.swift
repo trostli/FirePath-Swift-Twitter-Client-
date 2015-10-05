@@ -15,14 +15,22 @@ class HomeTweetCell: UITableViewCell {
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timeLabel: DXTimestampLabel!
+    @IBOutlet weak var retweetedImageView: UIImageView!
+    @IBOutlet weak var userThatRetweetedLabel: UILabel!
     
     var tweet: Tweet! {
         didSet {
             nameLabel.text = tweet.user?.name
             screenNameLabel.text = "@" + (tweet.user?.screenname)!
             tweetLabel.text = tweet.text
-            profileImageView.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrl)!))
+            profileImageView.setImageWithURL(NSURL(string: (tweet.user?.profileImageUrlString)!))
             timeLabel.timestamp = tweet.createdAt
+            
+            if tweet.isRetweeted == true {
+                userThatRetweetedLabel.text = tweet.retweetedBy
+            } else {
+                userThatRetweetedLabel.text = nil
+            }
         }
     }
     
