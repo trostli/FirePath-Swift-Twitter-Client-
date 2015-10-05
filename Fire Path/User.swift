@@ -55,7 +55,6 @@ class User: NSObject {
                     } catch {
                         print("json error: \(error)")
                     }
-        
                 }
             }
             return _currentUser

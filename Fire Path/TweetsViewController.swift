@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, TweetCellDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var tweets = [Tweet]?()
@@ -42,7 +42,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! HomeTweetCell
-        
+        cell.delegate = self
         cell.tweet = tweets?[indexPath.row]
         
         return cell
@@ -56,18 +56,48 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func tweetCellDelegate(tweetCell: HomeTweetCell, didTapRetweet tweet: Tweet) {
+        if tweet.isRetweeted == false {
+            TwitterClient.sharedInstance.retweetMessageWithParams(nil, tweetId: tweet.id!) { (tweet, error) -> () in
+                if error != nil {
+                    print("error: \(error)")
+                } else {
+                    print("retweet count:` \(tweet?.retweetedCount)")
+                    tweetCell.tweet = tweet
+                }
+            }
+        }
+    }
+    
+    func tweetCellDelegate(tweetCell: HomeTweetCell, didTapFavorite tweet: Tweet) {
+        if tweet.isFavorited == false {
+            let parameters = ["id": tweet.id!]
+            TwitterClient.sharedInstance.favoriteMessageWithParams(parameters) { (tweet, error) -> () in
+                if error != nil {
+                    print("error: \(error)")
+                } else {
+                    print("favorite count: \(tweet?.favoritesCount)")
+                    tweetCell.tweet = tweet
+                }
+            }
+        }
+    }
+    
     @IBAction func onLogoutButton(sender: AnyObject) {
         User.currentUser?.logout()
     }
 
-    /*
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if sender is HomeTweetCell {
+            let cell = sender as! HomeTweetCell
+            let tweetDetailViewController = segue.destinationViewController as! TweetDetailViewController
+            tweetDetailViewController.tweet =  cell.tweet
+        }
     }
-    */
+
 
 }

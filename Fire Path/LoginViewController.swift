@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Fire Path
 //
 //  Created by Daniel Trostli on 10/1/15.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-
     }
 
     @IBAction func onLoginButton(sender: AnyObject) {
@@ -27,8 +25,6 @@ class ViewController: UIViewController {
                 // handle login error
             }
         }
-        
-                
     }
     
     override func didReceiveMemoryWarning() {

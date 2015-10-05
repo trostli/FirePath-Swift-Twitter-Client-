@@ -16,7 +16,9 @@ class Tweet: NSObject {
     var favoritesCount: Int?
     var retweetedCount: Int?
     var isRetweeted: Bool?
+    var isFavorited: Bool?
     var retweetedBy: String?
+    var id: Int?
     
     init(dictionary: NSDictionary) {
         user = User(dictionary: dictionary["user"] as! NSDictionary)
@@ -24,6 +26,8 @@ class Tweet: NSObject {
         createdAtString = dictionary["created_at"] as? String
         favoritesCount = dictionary["favourites_count"] as? Int
         retweetedCount = dictionary["retweeted_count"] as? Int
+        isFavorited = dictionary["favorited"] as? Bool
+        id = dictionary["id"] as? Int
         if dictionary["retweeted_status"] != nil {
             isRetweeted = true
             retweetedBy = dictionary.valueForKeyPath("retweeted_status.entities.user_mentions.name") as? String
