@@ -34,6 +34,7 @@ class TweetDetailViewController: UITableViewController, TweetActionCellDelegate 
         case 0:
             let cell = tableView.dequeueReusableCellWithIdentifier("tweetCell", forIndexPath: indexPath) as! HomeTweetCell
             cell.tweet = tweet
+            cell.isDetailTweetView = true
             return cell
         case 1:
             let cell = tableView.dequeueReusableCellWithIdentifier("statCell", forIndexPath: indexPath) as! TweetStatCell

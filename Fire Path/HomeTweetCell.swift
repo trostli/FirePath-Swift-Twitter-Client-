@@ -11,6 +11,7 @@ import UIKit
 @objc protocol TweetCellDelegate {
     optional func tweetCellDelegate(tweetCell: HomeTweetCell, didTapRetweet tweet: Tweet)
     optional func tweetCellDelegate(tweetCell: HomeTweetCell, didTapFavorite tweet: Tweet)
+    optional func tweetCellDelegate(tweetCell: HomeTweetCell, didTapNameLabel tweet: Tweet)
 }
 
 class HomeTweetCell: UITableViewCell {
@@ -23,6 +24,7 @@ class HomeTweetCell: UITableViewCell {
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var retweetImageView: UIImageView!
     
+    var isDetailTweetView = false
     weak var delegate: TweetCellDelegate?
     
     var tweet: Tweet! {
@@ -38,13 +40,15 @@ class HomeTweetCell: UITableViewCell {
             }
             timeLabel.timestamp = tweet.createdAt
             
-            if tweet.isRetweeted == true {
-                retweetImageView.image = UIImage(named: "retweet_on")
+            if isDetailTweetView == false {
+                
+                if tweet.isRetweeted == true {
+                    retweetImageView.image = UIImage(named: "retweet_on")
+                }
+                if tweet.isFavorited == true {
+                    favoriteImageView.image = UIImage(named: "favorite_on")
+                }
             }
-            if tweet.isFavorited == true {
-                favoriteImageView.image = UIImage(named: "favorite_on")
-            }
-            
         }
     }
     
@@ -63,6 +67,9 @@ class HomeTweetCell: UITableViewCell {
             let tapFavoriteRecognizer = UITapGestureRecognizer(target: self, action: "onFavoriteTap")
             favoriteImageView.userInteractionEnabled = true
             favoriteImageView.addGestureRecognizer(tapFavoriteRecognizer)
+            
+            let tapNameLabelRecognizer = UITapGestureRecognizer(target: self, action: "onNameLabelTap")
+            nameLabel.addGestureRecognizer(tapNameLabelRecognizer)
         }
     }
     
@@ -72,6 +79,10 @@ class HomeTweetCell: UITableViewCell {
     
     func onFavoriteTap() {
         delegate?.tweetCellDelegate?(self, didTapFavorite: tweet)
+    }
+    
+    func onNameLabelTap() {
+        delegate?.tweetCellDelegate?(self, didTapNameLabel: tweet)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

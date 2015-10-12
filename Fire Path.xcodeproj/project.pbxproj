@@ -20,6 +20,8 @@
 		658815021BC4F9D10053E0F7 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658814FE1BC4F9D10053E0F7 /* TweetDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		658815031BC4F9D10053E0F7 /* TweetStatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658814FF1BC4F9D10053E0F7 /* TweetStatCell.swift */; settings = {ASSET_TAGS = (); }; };
 		658815051BC4FD5A0053E0F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658815041BC4FD5A0053E0F7 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		658815221BC79F4B0053E0F7 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 658815211BC79F4B0053E0F7 /* Profile.storyboard */; settings = {ASSET_TAGS = (); }; };
+		658815261BC8476F0053E0F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658815251BC8476F0053E0F7 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		65CEA1AB1BC0A64700BA2218 /* ComposeTweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CEA1AA1BC0A64700BA2218 /* ComposeTweetViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		F34433FCE8DC2B282507B229 /* libPods-Fire Path.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE5D48D58AE930DE25F878B /* libPods-Fire Path.a */; };
 /* End PBXBuildFile section */
@@ -43,6 +45,8 @@
 		658814FE1BC4F9D10053E0F7 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
 		658814FF1BC4F9D10053E0F7 /* TweetStatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetStatCell.swift; sourceTree = "<group>"; };
 		658815041BC4FD5A0053E0F7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../Desktop/Main.storyboard; sourceTree = "<group>"; };
+		658815211BC79F4B0053E0F7 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../../../../Desktop/Profile.storyboard; sourceTree = "<group>"; };
+		658815251BC8476F0053E0F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65CEA1AA1BC0A64700BA2218 /* ComposeTweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeTweetViewController.swift; sourceTree = "<group>"; };
 		FD1F0BCF3DC310B693AEEDEC /* Pods-Fire Path.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fire Path.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Fire Path/Pods-Fire Path.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +99,7 @@
 				65CEA1A41BC0883500BA2218 /* Views */,
 				653C1A0B1BBEFF0100707190 /* View Controllers */,
 				658815041BC4FD5A0053E0F7 /* Main.storyboard */,
+				658815211BC79F4B0053E0F7 /* Profile.storyboard */,
 				653C19F01BBE3E2A00707190 /* Assets.xcassets */,
 				653C19F21BBE3E2A00707190 /* LaunchScreen.storyboard */,
 				653C19F51BBE3E2A00707190 /* Info.plist */,
@@ -127,6 +132,7 @@
 				653C1A091BBE632B00707190 /* TweetsViewController.swift */,
 				65CEA1AA1BC0A64700BA2218 /* ComposeTweetViewController.swift */,
 				658814FE1BC4F9D10053E0F7 /* TweetDetailViewController.swift */,
+				658815251BC8476F0053E0F7 /* ProfileViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			files = (
 				653C19F41BBE3E2A00707190 /* LaunchScreen.storyboard in Resources */,
 				653C19F11BBE3E2A00707190 /* Assets.xcassets in Resources */,
+				658815221BC79F4B0053E0F7 /* Profile.storyboard in Resources */,
 				658815051BC4FD5A0053E0F7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +268,7 @@
 				65CEA1AB1BC0A64700BA2218 /* ComposeTweetViewController.swift in Sources */,
 				653C1A081BBE51CF00707190 /* Tweet.swift in Sources */,
 				653C1A0A1BBE632B00707190 /* TweetsViewController.swift in Sources */,
+				658815261BC8476F0053E0F7 /* ProfileViewController.swift in Sources */,
 				658815001BC4F9D10053E0F7 /* TweetActionCell.swift in Sources */,
 				653C19EC1BBE3E2A00707190 /* LoginViewController.swift in Sources */,
 				653C1A031BBE40EA00707190 /* TwitterClient.swift in Sources */,
@@ -371,6 +379,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Fire Path/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.trostli.Fire-Path";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -386,6 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Fire Path/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.trostli.Fire-Path";
 				PRODUCT_NAME = "$(TARGET_NAME)";

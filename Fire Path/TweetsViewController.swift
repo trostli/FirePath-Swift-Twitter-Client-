@@ -56,6 +56,10 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
     func tweetCellDelegate(tweetCell: HomeTweetCell, didTapRetweet tweet: Tweet) {
         if tweet.isRetweeted == false {
             TwitterClient.sharedInstance.retweetMessageWithParams(nil, tweetId: tweet.id!) { (tweet, error) -> () in
@@ -81,6 +85,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         }
+    }
+    
+    func tweetCellDelegate(tweetCell: HomeTweetCell, didTapNameLabel tweet: Tweet) {
+        let profileStoryboard = UIStoryboard(name: "Profile", bundle: NSBundle.mainBundle())
+        let vc = profileStoryboard.instantiateInitialViewController() as! ProfileViewController
+        vc.user = tweet.user
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func onLogoutButton(sender: AnyObject) {
