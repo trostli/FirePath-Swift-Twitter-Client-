@@ -10,9 +10,9 @@ Time spent: `12`
 
 #### Required
 
-- [ ] Hamburger menu
-   - [ ] Dragging anywhere in the view should reveal the menu.
-   - [ ] The menu should include links to your profile, the home timeline, and the mentions view.
+- [x] Hamburger menu
+   - [x] Dragging anywhere in the view should reveal the menu.
+   - [x] The menu should include links to your profile, the home timeline, and the mentions view.
 - [x] Profile page
    - [x] Contains the user header view
    - [x] Contains a section with the users basic stats: # tweets, # following, # followers
@@ -33,7 +33,7 @@ Time spent: `12`
 
 ### Walkthrough
 
-![Video Walkthrough]()
+![Video Walkthrough](https://i.imgur.com/nmPcvx2.gif)
 
 ## Week 3 Assignment
 

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if User.currentUser != nil {
             // Go to logged in screen
-            let vc = storyboard.instantiateViewControllerWithIdentifier("mainNavigation")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("containerView")
             window?.rootViewController = vc
         }
         
